@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> 
+<html lang="en"> 
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>志愿者端-登录</title>
+<link type="text/css" href="assets/css/login-style.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<section id="content">
+		<form method="post" action="">
+			<h1>登录</h1>
+			<div>
+				<input type="text" placeholder="电子邮箱" required id="email" name="mailAddress" />
+			</div>
+			<div>
+				<input type="password" placeholder="密码" required id="password" name="password" />
+			</div>
+			<div>
+				<input type="button" value="登录" />
+				<a href="#">忘记密码?</a>
+				<a href="#">注册</a>
+			</div>
+		</form><!-- form -->
+        <div>
+        	<p id="demo">Let AJAX change this text.</p>
+        </div>
+	</section><!-- content -->
+</div><!-- container -->
+
+<script>
+  $(document).ready(function() {
+	  $("input[type=button]").click(function() {
+      login();
+    })
+  });
+	function login(){
+		//var URL="http://114.115.142.42/Operation/ManagerLogin";
+		document.getElementById("demo").innerHTML = document.getElementById("email").value;
+
+		var username=document.getElementById("email").value;  
+  		var password=document.getElementById("password").value;  
+   
+    	var params = "mailAddress="+username+"&password="+password;  
+           var url = "http://114.115.142.42/Operation/ManagerLogin";  
+                $.ajax({  
+                               type: 'POST',  
+                               url: url,  
+                               dataType: 'json',  
+                               data: params,  
+                               beforeSend: function() {  
+                                 document.getElementById("demo").innerHTML= 'checking...'  ;  
+                                 window.alert('checking...');
+                               },  
+                               complete: function(XMLHttpRequest, textStatus) {  
+                                          window.alert(textStatus);
+                               },  
+                               success: function(data) {  
+                                 	window.alert('success');
+                                       
+                                     document.getElementById("demo").innerHTML= data;  
+                                     window.alert(data);
+                                     if(data=="success"){  
+                                        
+                                       window.alert('success');
+                                       
+                                     }  
+                                       
+                                },
+                                error: function() {
+                                  window.alert("!!!");
+                                }
+                                //error:function(XMLHttpRequest, textStatus, errorThrown){
+          							//通常情况下textStatus和errorThrown只有其中一个包含信息
+          						//	window.alert(textStatus);
+       							//}
+                                       
+                       });  
+
+		/*
+		window.alert("1");
+		var xmlhttp;
+		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+    	    xmlhttp = new XMLHttpRequest();
+    	} else {// code for IE6, IE5
+        	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    	}
+    	xmlhttp.open("post", "http://114.115.142.42/Operation/ManagerLogin?mailAddress=" + document.getElementById("email").value + "&password=" + document.getElementById("password").value, true);
+    	window.alert("2");
+    	xmlhttp.onreadystatechange = function () {
+    		window.alert("2.5");
+        	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                window.alert(xmlhttp.responseText);
+            }
+        };
+        window.alert("3");
+    	xmlhttp.send();
+    	*/
+	}
+</script>
+</body>
+</html>
