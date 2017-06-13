@@ -6,32 +6,71 @@
 <html lang="en"> 
 <!--<![endif]-->
 <head>
-<meta charset="gb2312">
-<title>Ö¾Ô¸Õß¶Ë-×¢²á</title>
+<meta charset="utf-8">
+<title>å¿—æ„¿è€…ç«¯-æ³¨å†Œ</title>
 <link type="text/css" href="assets/css/login-style.css" rel="stylesheet" />
 </head>
 <body>
 <div class="container">
 	<section id="content">
 		<form method="POST" action="http://114.115.142.42/Operation/ManagerRegister">
-			<h1>×¢²á</h1>
+			<h1>Ã—Â¢Â²Ã¡</h1>
 			<div>
-				<input type="email" placeholder="µç×ÓÓÊÏä" required id="email" name="mailAddress" />
+				<input type="email" placeholder="ç”µå­é‚®ç®±" required id="email" name="mailAddress" />
 			</div>
 			<div>
-				<input type="tel" placeholder="ÊÖ»úºÅ" required id="phone" name="pnoneNumber" />
+				<input type="tel" placeholder="æ‰‹æœºå·" required id="phone" name="pnoneNumber" />
 			</div>
             <div>
-				<input type="text" placeholder="ÓÃ»§Ãû" required id="name" name="name" />
+				<input type="text" placeholder="ç”¨æˆ·å" required id="name" name="name" />
 			</div>
             <div>
-				<input type="password" placeholder="ÃÜÂë" required id="password" name="password" />
+				<input type="password" placeholder="å¯†ç " required id="password" name="password" />
 			</div>
 			<div>
-				<input type="submit" value="×¢²á" />
+				<input type="button" value="æ³¨å†Œ" />
 			</div>
 		</form><!-- form -->
 	</section><!-- content -->
 </div><!-- container -->
+<script>
+  $(document).ready(function() {
+	  $("input[type=button]").click(function() {
+      register();
+    })
+  });
+	function register(){
+		var username=document.getElementById("email").value;  
+  		var password=document.getElementById("password").value; 
+  		var name=document.getElementById("name").value;
+  		var phone=document.getElementById("phone").value;
+   
+    	var params = "mailAddress="+username+"&password="+password+"&phone="+phone+"&name="+name;  
+        var url = "http://114.115.142.42/Operation/ManagerRegister";  
+                $.ajax({  
+                  type: 'POST',  
+                  url: url,  
+                  dataType: 'text',  
+                  data: params,  
+                  beforeSend: function() {  
+                    //document.getElementById("demo").innerHTML= 'checking...'  ;  
+                  },  
+                  complete: function(XMLHttpRequest, textStatus) { 
+                  },  
+                  success: function(data) {  
+                    if(data=="success"){  
+                      window.location.href="index.html";
+                    }else{
+                      document.getElementById("demo").innerHTML= data;
+                    }
+                  },
+                  //error:function(XMLHttpRequest, textStatus, errorThrown){
+                  //é€šå¸¸æƒ…å†µä¸‹textStatuså’ŒerrorThrownåªæœ‰å…¶ä¸­ä¸€ä¸ªåŒ…å«ä¿¡æ¯
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    window.alert(textStatus);
+                  }
+                });  
+  }
+
 </body>
 </html>

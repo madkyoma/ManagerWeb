@@ -26,11 +26,11 @@
 			<div>
 				<input type="button" value="登录" />
 				<a href="#">忘记密码?</a>
-				<a href="#">注册</a>
+				<a href="register.html">注册</a>
 			</div>
 		</form><!-- form -->
         <div>
-        	<p id="demo">Let AJAX change this text.</p>
+        	<p id="demo"></p>
         </div>
 	</section><!-- content -->
 </div><!-- container -->
@@ -42,68 +42,39 @@
     })
   });
 	function login(){
-		//var URL="http://114.115.142.42/Operation/ManagerLogin";
-		document.getElementById("demo").innerHTML = document.getElementById("email").value;
-
-		var username=document.getElementById("email").value;  
-  		var password=document.getElementById("password").value;  
-   
+		  var username=document.getElementById("email").value;  
+  		var password=document.getElementById("password").value;
     	var params = "mailAddress="+username+"&password="+password;  
-           var url = "http://114.115.142.42/Operation/ManagerLogin";  
-                $.ajax({  
-                               type: 'POST',  
-                               url: url,  
-                               dataType: 'json',  
-                               data: params,  
-                               beforeSend: function() {  
-                                 document.getElementById("demo").innerHTML= 'checking...'  ;  
-                                 window.alert('checking...');
-                               },  
-                               complete: function(XMLHttpRequest, textStatus) {  
-                                          window.alert(textStatus);
-                               },  
-                               success: function(data) {  
-                                 	window.alert('success');
-                                       
-                                     document.getElementById("demo").innerHTML= data;  
-                                     window.alert(data);
-                                     if(data=="success"){  
-                                        
-                                       window.alert('success');
-                                       
-                                     }  
-                                       
-                                },
-                                error: function() {
-                                  window.alert("!!!");
-                                }
-                                //error:function(XMLHttpRequest, textStatus, errorThrown){
-          							//通常情况下textStatus和errorThrown只有其中一个包含信息
-          						//	window.alert(textStatus);
-       							//}
-                                       
-                       });  
 
-		/*
-		window.alert("1");
-		var xmlhttp;
-		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-    	    xmlhttp = new XMLHttpRequest();
-    	} else {// code for IE6, IE5
-        	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    	}
-    	xmlhttp.open("post", "http://114.115.142.42/Operation/ManagerLogin?mailAddress=" + document.getElementById("email").value + "&password=" + document.getElementById("password").value, true);
-    	window.alert("2");
-    	xmlhttp.onreadystatechange = function () {
-    		window.alert("2.5");
-        	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                window.alert(xmlhttp.responseText);
-            }
-        };
-        window.alert("3");
-    	xmlhttp.send();
-    	*/
-	}
+      var url = "http://114.115.142.42/Operation/ManagerLogin"; 
+
+                $.ajax({  
+                  type: 'POST',  
+                  url: url,  
+                  dataType: 'text',  
+                  data: params,  
+                  beforeSend: function() {  
+                    //document.getElementById("demo").innerHTML= 'checking...'  ;  
+                    //window.alert('checking...');
+                  },  
+                  complete: function(XMLHttpRequest, textStatus) { 
+                  },  
+                  success: function(data) {  
+                    if(data=="success"){  
+                      window.location.href="index.html";
+                    }else{
+                      document.getElementById("demo").innerHTML= data;
+                    }
+                  },
+                  //error:function(XMLHttpRequest, textStatus, errorThrown){
+                  //通常情况下textStatus和errorThrown只有其中一个包含信息
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    window.alert(textStatus);
+                  }
+                });  
+  }
+
+
 </script>
 </body>
 </html>
