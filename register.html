@@ -9,47 +9,51 @@
 <meta charset="utf-8">
 <title>志愿者端-注册</title>
 <link type="text/css" href="assets/css/login-style.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/js/jquery-1.10.2.js"></script>
 </head>
 <body>
 <div class="container">
 	<section id="content">
-		<form action="">
+		<form method="post" action="">
 			<h1>注册</h1>
 			<div>
-				<input type="email" placeholder="电子邮箱" required id="email" name="mailAddress" />
+				<input type="text" placeholder="电子邮箱" required id="email" name="mailAddress" />
 			</div>
+      <div>
+        <input type="text" placeholder="手机号" required id="phone" name="mailAddress" />
+      </div>
+      <div>
+        <input type="text" placeholder="用户名" required id="name" name="mailAddress" />
+      </div>
 			<div>
-				<input type="tel" placeholder="手机号" required id="phone" name="pnoneNumber" />
-			</div>
-            <div>
-				<input type="text" placeholder="用户名" required id="name" name="name" />
-			</div>
-            <div>
 				<input type="password" placeholder="密码" required id="password" name="password" />
 			</div>
+
 			<div>
 				<input type="button" value="注册" />
 			</div>
 		</form><!-- form -->
         <div>
-          <p id="demo"></p>
+        	<p id="demo"></p>
         </div>
 	</section><!-- content -->
 </div><!-- container -->
+
 <script>
   $(document).ready(function() {
 	  $("input[type=button]").click(function() {
-      register();
+      login();
     })
   });
-	function register(){
-		var username=document.getElementById("email").value;  
-  		var password=document.getElementById("password").value; 
-  		var name=document.getElementById("name").value;
+	function login(){
+		  var username=document.getElementById("email").value;  
   		var phone=document.getElementById("phone").value;
-   
-    	var params = "mailAddress="+username+"&password="+password+"&phoneNumber="+phone+"&name="+name;  
-        var url = "http://114.115.142.42/Operation/ManagerRegister";  
+      var name=document.getElementById("name").value;  
+      var password=document.getElementById("password").value;
+    	var params = "mailAddress="+username+"&password="+password+"&name="+name+"&password="+password;
+
+      var url = "http://114.115.142.42/Operation/ManagerRegister"; 
+
                 $.ajax({  
                   type: 'POST',  
                   url: url,  
@@ -57,13 +61,14 @@
                   data: params,  
                   beforeSend: function() {  
                     //document.getElementById("demo").innerHTML= 'checking...'  ;  
+                    //window.alert('checking...');
                   },  
                   complete: function(XMLHttpRequest, textStatus) { 
                   },  
                   success: function(data) {  
                     if(data=="success"){  
-                      window.location.href ="login.html";
-                    }else if(data=="has been Register"){
+                      window.location.href="login.html";
+                    }else if(data=="已被注册"){
                       document.getElementById("demo").innerHTML = "该邮箱已被注册！";
                     }else{
                       document.getElementById("demo").innerHTML = data ;
@@ -77,5 +82,7 @@
                 });  
   }
 
+
+</script>
 </body>
 </html>
