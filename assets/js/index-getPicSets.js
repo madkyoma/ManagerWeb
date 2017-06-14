@@ -1,5 +1,5 @@
 function getPicSets(){
-
+  window.alert("运行了此方法getPicSets"); 
     	var params = " ";  
         var url = "http://114.115.142.42/Operation/GetPicSet";  
                 $.ajax({  
@@ -7,7 +7,7 @@ function getPicSets(){
                   url: url,  
                   dataType: 'text',  
                   data: params,  
-                  beforeSend: function() {  
+                  beforeSend: function(){  
                   },  
                   complete: function(XMLHttpRequest, textStatus) { 
                   },  
