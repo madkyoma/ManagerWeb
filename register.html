@@ -31,6 +31,9 @@
 				<input type="button" value="注册" />
 			</div>
 		</form><!-- form -->
+        <div>
+          <p id="demo"></p>
+        </div>
 	</section><!-- content -->
 </div><!-- container -->
 <script>
@@ -43,9 +46,9 @@
 		var username=document.getElementById("email").value;  
   		var password=document.getElementById("password").value; 
   		var name=document.getElementById("name").value;
-  		var phone=document.getElementById("phoneNumber").value;
+  		var phone=document.getElementById("phone").value;
    
-    	var params = "mailAddress="+username+"&password="+password+"&phone="+phone+"&name="+name;  
+    	var params = "mailAddress="+username+"&password="+password+"&phoneNumber="+phone+"&name="+name;  
         var url = "http://114.115.142.42/Operation/ManagerRegister";  
                 $.ajax({  
                   type: 'POST',  
