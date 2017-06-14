@@ -13,8 +13,8 @@
 <body>
 <div class="container">
 	<section id="content">
-		<form method="POST" action="http://114.115.142.42/Operation/ManagerRegister">
-			<h1>×¢²á</h1>
+		<form action="">
+			<h1>注册</h1>
 			<div>
 				<input type="email" placeholder="电子邮箱" required id="email" name="mailAddress" />
 			</div>
@@ -43,7 +43,7 @@
 		var username=document.getElementById("email").value;  
   		var password=document.getElementById("password").value; 
   		var name=document.getElementById("name").value;
-  		var phone=document.getElementById("phone").value;
+  		var phone=document.getElementById("phoneNumber").value;
    
     	var params = "mailAddress="+username+"&password="+password+"&phone="+phone+"&name="+name;  
         var url = "http://114.115.142.42/Operation/ManagerRegister";  
@@ -59,9 +59,11 @@
                   },  
                   success: function(data) {  
                     if(data=="success"){  
-                      window.location.href="index.html";
+                      window.location.href ="login.html";
+                    }else if(data=="has been Register"){
+                      document.getElementById("demo").innerHTML = "该邮箱已被注册！";
                     }else{
-                      document.getElementById("demo").innerHTML= data;
+                      document.getElementById("demo").innerHTML = data ;
                     }
                   },
                   //error:function(XMLHttpRequest, textStatus, errorThrown){

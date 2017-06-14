@@ -62,8 +62,12 @@
                   success: function(data) {  
                     if(data=="success"){  
                       window.location.href="index.html";
+                    }else if(data=="Wrong password"){
+                      document.getElementById("demo").innerHTML = "密码错误！";
+                    }else if(data=="No such mailAddress"){
+                      document.getElementById("demo").innerHTML = "该邮箱未注册！";
                     }else{
-                      document.getElementById("demo").innerHTML= data;
+                      document.getElementById("demo").innerHTML = data ;
                     }
                   },
                   //error:function(XMLHttpRequest, textStatus, errorThrown){
