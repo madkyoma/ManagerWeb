@@ -5,7 +5,7 @@ function getPicSets(){
                 $.ajax({  
                   type: 'POST',  
                   url: url,  
-                  dataType: 'JSON',  
+                  dataType: 'text',  
                   data: params,  
                   beforeSend: function() {  
                   },  
@@ -17,11 +17,11 @@ function getPicSets(){
                       window.alert("非法操作！");
                     }else{
                      	var myobj=eval(data);
-						    for(var i=0;i<myobj.length;i++){
-    						window.alert(myobj[i].Url);
-    						window.alert(myobj[i].PicSetName);
-    						window.alert(myodj[i].isFinish);
-						}
+                      for(var i=0;i<myobj.length;i++){
+    						        window.alert(myobj[i].Url);
+    				        		window.alert(myobj[i].PicSetName);
+    					         	window.alert(myodj[i].isFinish);
+						          }
                     }
                   },
                   //error:function(XMLHttpRequest, textStatus, errorThrown){
