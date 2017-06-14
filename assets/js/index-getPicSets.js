@@ -1,9 +1,6 @@
-$(document).ready(function() {
-      getPicSets();
-  });
 function getPicSets(){
 
-    	var params = "";  
+    	var params = " ";  
         var url = "http://114.115.142.42/Operation/GetPicSet";  
                 $.ajax({  
                   type: 'POST',  
@@ -14,7 +11,8 @@ function getPicSets(){
                   },  
                   complete: function(XMLHttpRequest, textStatus) { 
                   },  
-                  success: function(data) {  
+                  success: function(data) { 
+                  window.alert(data); 
                     if(data=="invalid!"){  
                       window.alert("非法操作！");
                     }else{
