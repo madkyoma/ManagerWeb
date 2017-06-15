@@ -11,9 +11,8 @@ function getPicSets(){
                   complete: function(XMLHttpRequest, textStatus) { 
                   },  
                   success: function(data) { 
-                  window.alert(data); 
                     if(data=="invalid!"){  
-                      window.alert("非法操作！");
+                      window.alert("未登录！非法操作！");
                     }else{
                       //获取页面中的元素
                       var albumArr=new Array(document.getElementById("album1"),
@@ -74,7 +73,6 @@ function getPicSets(){
                         //记录图集ID
                         if(myobj[i].PicSetId!=null&&myobj[i].PicSetId!="")
                           albumIDArr[i].innerHTML=myobj[i].PicSetId;
-    					         	window.alert(myobj[i].PicSetId);
 						          }
                     }
                   },

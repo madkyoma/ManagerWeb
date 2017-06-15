@@ -21,12 +21,6 @@
                 }
             });
 
-            
-            
-            
-
-       
-	 
         },
 
         initialization: function () {
