@@ -8,9 +8,12 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #3E3E3E;
 }
+.album{
+  height:130px;
+}
 .album_cover{
   width:30%;
-  height:80%;
+  height:100%;
 }
 
  #wrapper {
@@ -210,6 +213,9 @@ h1.page-header small {
 }
 i.fa.fa-bars:hover {
 	color: #F36A5A;
+}
+.board{
+  height:100%;
 }
 .board .panel {
     padding: 25px 15px;
