@@ -22,7 +22,11 @@ function getPicSets(){
                         document.getElementById("album5"),
                         document.getElementById("album6"),
                         document.getElementById("album7"),
-                        document.getElementById("album8"));
+                        document.getElementById("album8"),
+                        document.getElementById("album9"),
+                        document.getElementById("album10"),
+                        document.getElementById("album11"),
+                        document.getElementById("album12"));
                       var albumNameArr=new Array(document.getElementById("album_name1"),
                         document.getElementById("album_name2"),
                         document.getElementById("album_name3"),
@@ -30,7 +34,11 @@ function getPicSets(){
                         document.getElementById("album_name5"),
                         document.getElementById("album_name6"),
                         document.getElementById("album_name7"),
-                        document.getElementById("album_name8"));
+                        document.getElementById("album_name8"),
+                        document.getElementById("album_name9"),
+                        document.getElementById("album_name10"),
+                        document.getElementById("album_name11"),
+                        document.getElementById("album_name12"));
                       var albumFinishArr=new Array(document.getElementById("album_finish1"),
                         document.getElementById("album_finish2"),
                         document.getElementById("album_finish3"),
@@ -38,7 +46,11 @@ function getPicSets(){
                         document.getElementById("album_finish5"),
                         document.getElementById("album_finish6"),
                         document.getElementById("album_finish7"),
-                        document.getElementById("album_finish8"));
+                        document.getElementById("album_finish8"),
+                        document.getElementById("album_finish9"),
+                        document.getElementById("album_finish10"),
+                        document.getElementById("album_finish11"),
+                        document.getElementById("album_finish12"));
                       var albumCoverArr=new Array(document.getElementById("album_cover1"),
                         document.getElementById("album_cover2"),
                         document.getElementById("album_cover3"),
@@ -46,7 +58,11 @@ function getPicSets(){
                         document.getElementById("album_cover5"),
                         document.getElementById("album_cover6"),
                         document.getElementById("album_cover7"),
-                        document.getElementById("album_cover8"));
+                        document.getElementById("album_cover8"),
+                        document.getElementById("album_cover9"),
+                        document.getElementById("album_cover10"),
+                        document.getElementById("album_cover11"),
+                        document.getElementById("album_cover12"));
                       var albumIDArr=new Array(document.getElementById("album_id1"),
                         document.getElementById("album_id2"),
                         document.getElementById("album_id3"),
@@ -54,7 +70,11 @@ function getPicSets(){
                         document.getElementById("album_id5"),
                         document.getElementById("album_id6"),
                         document.getElementById("album_id7"),
-                        document.getElementById("album_id8"));
+                        document.getElementById("album_id8"),
+                        document.getElementById("album_id9"),
+                        document.getElementById("album_id10"),
+                        document.getElementById("album_id11"),
+                        document.getElementById("album_id12"));
                      	var myobj=eval(data);
                       for(var i=0;i<myobj.length;i++){
                         //显示图集div
