@@ -1,21 +1,25 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta content="" name="description" />
-    <meta content="webthemez" name="author" />
-    <title>志愿者端-图集</title>
-	<!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-        <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
-     <!-- Google Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <title>志愿者端-标签结果导出</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+    <script type="text/javascript">
+            
+    </script>
 </head>
+
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -26,18 +30,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> BRILLIANT</strong></a>
-				<div id="sideNav" href="">
-		<i class="fa fa-bars icon"></i> 
-		</div>
+                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> No3b</strong></a>
+                <div id="sideNav" href="">
+                    <i class="fa fa-bars icon"></i> 
+                </div>  
             </div>
 
-              <ul class="nav navbar-top-links navbar-right">      
+            <ul class="nav navbar-top-links navbar-right">
+                
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="color:#F30">
                         <i class="fa fa-user fa-fw"></i> 
-                        用户名 
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
@@ -54,356 +58,338 @@
                 <!-- /.dropdown -->
             </ul>
         </nav>
+        <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-
                     <li>
                         <a href="index.html"><i class="fa fa-dashboard"></i> 我发布的图片</a>
                     </li>
                     <li>
-                        <a href="ui-elements.html"><i class="fa fa-edit"></i> 发布新的图片</a>
+                        <a href="create-picSet.html"><i class="fa fa-edit"></i> 发布新的图片</a>
                     </li> 
-					
-                    
                     <li>
-                        <a class="active-menu" href="tab-panel.html"><i class="fa fa-table"></i> 图片集下载</a>
+                        <a class="active-menu" href="tab-panel.html"><i class="fa fa-table"></i> 标签结果导出</a>
                     </li>
                     <li>
                         <a href="form.html"><i class="fa fa-user"></i> 个人信息修改 </a>
                     </li>
-
-					 
-					 <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="chart.html">Charts JS</a>
-                            </li>
-                            <li>
-                                <a href="morris-chart.html">Morris Chart</a>
-                            </li>
-							</ul>
-						</li>	
-							
-                    <li>
-                       <a href="table.html"><i class="fa fa-qrcode"></i> Table</a>
-                    </li>
-                    
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li>
+                        
                 </ul>
 
             </div>
 
         </nav>
         <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
-			  <div class="header"> 
+      
+        <div id="page-wrapper">
+          <div class="header"> 
                         <h1 class="page-header">
-                            Tabs & Panels <small>Nice tabs and panels</small>
+                            标签结果导出 <small>Welcome 管理员</small>
                         </h1>
-						<ol class="breadcrumb">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Tabs & Panels</a></li>
-					  <li class="active">Data</li>
-					</ol> 
-									
-		</div>
-		
-            <div id="page-inner"> 
-                                 
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Default Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            Primary Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            Success Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-            </div>
-                   <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Info Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading">
-                            Warning Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-danger">
-                        <div class="panel-heading">
-                            Danger Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-            </div>
-                    <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Collapsible Accordion Panel Group
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel-group" id="accordion">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">Collapsible Group Item #1</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
-                                        <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse in" style="height: auto;">
-                                        <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">Collapsible Group Item #3</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                    <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Tabs
-                        </div>
-                        <div class="panel-body">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#home" data-toggle="tab">Home</a>
-                                </li>
-                                <li class=""><a href="#profile" data-toggle="tab">Profile</a>
-                                </li>
-                                <li class=""><a href="#messages" data-toggle="tab">Messages</a>
-                                </li>
-                                <li class=""><a href="#settings" data-toggle="tab">Settings</a>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content">
-                                <div class="tab-pane fade active in" id="home">
-                                    <h4>Home Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                                <div class="tab-pane fade" id="profile">
-                                    <h4>Profile Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                                <div class="tab-pane fade" id="messages">
-                                    <h4>Messages Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                                <div class="tab-pane fade" id="settings">
-                                    <h4>Settings Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Pill Tabs
-                        </div>
-                        <div class="panel-body">
-                            <ul class="nav nav-pills">
-                                <li class=""><a href="#home-pills" data-toggle="tab">Home</a>
-                                </li>
-                                <li class=""><a href="#profile-pills" data-toggle="tab">Profile</a>
-                                </li>
-                                <li class=""><a href="#messages-pills" data-toggle="tab">Messages</a>
-                                </li>
-                                <li class="active"><a href="#settings-pills" data-toggle="tab">Settings</a>
-                                </li>
-                            </ul>
-
-                            <div class="tab-content">
-                                <div class="tab-pane fade" id="home-pills">
-                                    <h4>Home Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                                <div class="tab-pane fade" id="profile-pills">
-                                    <h4>Profile Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                                <div class="tab-pane fade" id="messages-pills">
-                                    <h4>Messages Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                                <div class="tab-pane fade active in" id="settings-pills">
-                                    <h4>Settings Tab</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                    <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="well">
-                        <h4>Normal Well</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="well well-lg">
-                        <h4>Large Well</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="well well-sm">
-                        <h4>Small Well</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                    </div>
-                </div>
-            </div>
-                    <!-- /. ROW  -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="jumbotron">
-                        <h1>Jumbotron</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing.</p>
-                        <p>
-                            <a class="btn btn-primary btn-lg" role="button">Learn more</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-                    <!-- /. ROW  -->
-				<footer><p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p></footer>
-					</div>
-			 <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
+                        
+                                    
         </div>
-     <!-- /. WRAPPER  -->
+            <div id="page-inner">
+
+            <!--  图集第一行row  -->
+            <div class="row">
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board"  id="album1" style="display:none;" onclick="showPics(0)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name1">普普通通的相册名</h3>
+                                    <small id="album_finish1">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover1" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id1"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album2" style="display:none;" onclick="showPics(1)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name2">图集名2</h3>
+                                    <small id="album_finish2">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover2" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id2"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album3" style="display:none;" onclick="showPics(2)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name3">图集名3</h3>
+                                    <small id="album_finish3">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover3" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id3"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album4" style="display:none;" onclick="showPics(3)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name4">图集名4</h3>
+                                    <small id="album_finish4">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover4" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id4"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                   
+                </div>
+                <!--第一行row结束-->
+
+            <!--  图集第二行row  -->
+            <div class="row">
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board"  id="album5" style="display:none;" onclick="showPics(4)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name5">图集名5</h3>
+                                    <small id="album_finish5">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover5" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id5"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album6" style="display:none;" onclick="showPics(5)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name6">图集名6</h3>
+                                    <small id="album_finish6">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover6" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id6"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album7" style="display:none;" onclick="showPics(6)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name7">图集名7</h3>
+                                    <small id="album_finish7">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover7" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id7"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album8" style="display:none;" onclick="showPics(7)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name8">图集名8</h3>
+                                    <small id="album_finish8">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover8" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id8"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                   
+                </div>
+                <!--第二行row结束-->                 
+
+                <!--  图集第三行row  -->
+            <div class="row">
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board"  id="album9" style="display:none;" onclick="showPics(8)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name9">图集名9</h3>
+                                    <small id="album_finish9">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover9" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id9"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album10" style="display:none;" onclick="showPics(9)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name10">图集名10</h3>
+                                    <small id="album_finish10">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover10" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id10"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album11" style="display:none;" onclick="showPics(10)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name11">图集名11</h3>
+                                    <small id="album_finish11">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover11" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id11"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                    
+                            <div class="col-md-3 col-sm-12 col-xs-12 album">
+                    <div class="board" id="album12" style="display:none;" onclick="showPics(11)">
+                        <div class="panel panel-primary">
+                            <div class="number">
+                                <h3>
+                                    <h3 id="album_name12">图集名12</h3>
+                                    <small id="album_finish12">Daily Visits</small>
+                                </h3> 
+                            </div>
+                            <div class="icon album_cover">
+                                <img id="album_cover12" height="100%" width="100%" src="assets/img/album_default_cover.png">
+                            </div>
+                            <p id="album_id12"  style="display:none;"></p>
+                        </div>
+                    </div>
+                 </div>
+                   
+                </div>
+                <!--第三行row结束-->
+       
+                
+                <footer><p>Copyright &copy; 2017. No3b All rights reserved.<a target="_blank" href="#">联系我们</a></p>
+                
+        
+                </footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
+    
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>
-      <!-- Bootstrap Js -->
+    <!-- 连接服务器读取图片集JS -->
+    <script src="assets/js/index-getPicSets.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            getPicSets();
+
+        });
+        var albumIDArr=new Array(document.getElementById("album_id1"),
+                        document.getElementById("album_id2"),
+                        document.getElementById("album_id3"),
+                        document.getElementById("album_id4"),
+                        document.getElementById("album_id5"),
+                        document.getElementById("album_id6"),
+                        document.getElementById("album_id7"),
+                        document.getElementById("album_id8"),
+                        document.getElementById("album_id9"),
+                        document.getElementById("album_id10"),
+                        document.getElementById("album_id11"),
+                        document.getElementById("album_id12"));
+        var albumNameArr=new Array(document.getElementById("album_name1"),
+                        document.getElementById("album_name2"),
+                        document.getElementById("album_name3"),
+                        document.getElementById("album_name4"),
+                        document.getElementById("album_name5"),
+                        document.getElementById("album_name6"),
+                        document.getElementById("album_name7"),
+                        document.getElementById("album_name8"),
+                        document.getElementById("album_name9"),
+                        document.getElementById("album_name10"),
+                        document.getElementById("album_name11"),
+                        document.getElementById("album_name12"));
+        function showPics(i){
+            var params = "picSetId="+albumIDArr[i].innerHTML;
+            var url = "http://114.115.142.42/Operation/ExportPhotos";  
+                $.ajax({  
+                  type: 'POST',  
+                  url: url,  
+                  dataType: 'text',  
+                  data: params,  
+                  beforeSend: function(){  
+                  },  
+                  complete: function(XMLHttpRequest, textStatus) { 
+                  },  
+                  success: function(data) { 
+                    window.alert(data); 
+                    document.execCommand("saveAs",true,data);
+                  },
+                  //error:function(XMLHttpRequest, textStatus, errorThrown){
+                  //通常情况下textStatus和errorThrown只有其中一个包含信息
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    window.alert(textStatus);
+                  }
+                });  
+        }
+    </script>
+    <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->
     <script src="assets/js/jquery.metisMenu.js"></script>
-      <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
     
-   
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+
+
 </body>
+
 </html>
