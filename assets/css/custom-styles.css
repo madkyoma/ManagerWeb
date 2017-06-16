@@ -8,6 +8,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #3E3E3E;
 }
+.picture{
+  height:250px;
+}
 .album{
   height:140px;
 }
@@ -76,6 +79,10 @@ p {
 }
 .panel{
 border-radius:0px;
+height: 100%;
+}
+.panel-body{
+  height: 85%;
 }
 .navbar-side .nav > li > a > i{color: #8C8C8C;padding: 8px;width: 30px;text-align: center;}
 .top-navbar{

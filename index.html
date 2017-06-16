@@ -15,7 +15,9 @@
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
-
+    <script type="text/javascript">
+            
+    </script>
 </head>
 
 <body>
@@ -144,7 +146,7 @@
             <!--  图集第一行row  -->
             <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board"  id="album1" style="display:none;">
+                    <div class="board"  id="album1" style="display:none;" onclick="showPics(albumIDArr[0].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -161,7 +163,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album2" style="display:none;">
+                    <div class="board" id="album2" style="display:none;" onclick="showPics(albumIDArr[1].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -178,7 +180,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album3" style="display:none;">
+                    <div class="board" id="album3" style="display:none;" onclick="showPics(albumIDArr[2].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -195,7 +197,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album4" style="display:none;">
+                    <div class="board" id="album4" style="display:none;" onclick="showPics(albumIDArr[3].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -217,7 +219,7 @@
             <!--  图集第二行row  -->
             <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board"  id="album5" style="display:none;">
+                    <div class="board"  id="album5" style="display:none;" onclick="showPics(albumIDArr[4].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -234,7 +236,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album6" style="display:none;">
+                    <div class="board" id="album6" style="display:none;" onclick="showPics(albumIDArr[5].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -251,7 +253,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album7" style="display:none;">
+                    <div class="board" id="album7" style="display:none;" onclick="showPics(albumIDArr[6].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -268,7 +270,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album8" style="display:none;">
+                    <div class="board" id="album8" style="display:none;" onclick="showPics(albumIDArr[7].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -290,7 +292,7 @@
                 <!--  图集第三行row  -->
             <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board"  id="album9" style="display:none;">
+                    <div class="board"  id="album9" style="display:none;" onclick="showPics(albumIDArr[8].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -307,7 +309,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album10" style="display:none;">
+                    <div class="board" id="album10" style="display:none;" onclick="showPics(albumIDArr[9].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -324,7 +326,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album11" style="display:none;">
+                    <div class="board" id="album11" style="display:none;" onclick="showPics(albumIDArr[10].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -341,7 +343,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album12" style="display:none;">
+                    <div class="board" id="album12" style="display:none;" onclick="showPics(albumIDArr[11].innerHTML)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -383,7 +385,24 @@
     <script type="text/javascript">
         $(document).ready(function() {
             getPicSets();
+
         });
+        var albumIDArr=new Array(document.getElementById("album_id1"),
+                        document.getElementById("album_id2"),
+                        document.getElementById("album_id3"),
+                        document.getElementById("album_id4"),
+                        document.getElementById("album_id5"),
+                        document.getElementById("album_id6"),
+                        document.getElementById("album_id7"),
+                        document.getElementById("album_id8"),
+                        document.getElementById("album_id9"),
+                        document.getElementById("album_id10"),
+                        document.getElementById("album_id11"),
+                        document.getElementById("album_id12"));
+        function showPics(picSetId){
+            var myurl="showPics.html"+"?"+"picSetId="+picSetId;
+            window.location.assign(myurl); 
+        }
     </script>
     <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

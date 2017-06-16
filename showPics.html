@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <title>志愿者端-我发布的图片</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="assets/css/select2.min.css" rel="stylesheet" >
+    <link href="assets/css/checkbox3.min.css" rel="stylesheet" >
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> No3b</strong></a>
+                <div id="sideNav" href="">
+        <i class="fa fa-bars icon"></i> 
+        </div>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="color:#F30">
+                        <i class="fa fa-user fa-fw"></i> 
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 信息修改</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 我发布的图片</a>
+                    </li>
+                    <li>
+                        <a href="create-picSet.html"><i class="fa fa-edit"></i> 发布新的图片</a>
+                    </li> 
+                    
+                    
+                    <li>
+                        <a href="tab-panel.html"><i class="fa fa-table"></i> 标签结果导出</a>
+                    </li>
+                    <li>
+                        <a href="form.html"><i class="fa fa-user"></i> 个人信息修改 </a>
+                    </li>
+                                                
+                    <li>
+                        <a href="table.html"><i class="fa fa-qrcode"></i> Table</a>
+                    </li>
+                    
+                    <li>
+                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+          <div class="header"> 
+                        <h1 class="page-header">
+                           图片集名称 <small>Welcome 管理员</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li><a href="index.html" id="newPicSet">返回图片集目录 </a></li>
+                    </ol> 
+                                    
+        </div>
+            <div id="page-inner"> 
+            <!-- 第一行ROW -->
+            <div class="row">
+                <div class="col-md-3 col-sm-12 picture" id="div1" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img  name="pic" id="pic1" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label1" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div2" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic2" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label2" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div3" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic3" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label3" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 picture" id="div4" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic4" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label4" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+                   <!-- /. 第二行ROW  -->
+            <div class="row">
+                <div class="col-md-3 col-sm-12 picture" id="div5" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic5" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label5" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div6" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic6" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label6" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div7" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic7" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label7" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div8" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic8" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label8" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>   
+                   <!-- /. 第三行ROW  -->
+            <div class="row">
+                <div class="col-md-3 col-sm-12 picture" id="div9" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic9" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label9" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div10" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic10" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label10" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div11" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic11" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label11" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 picture" id="div12" name="picDiv" style="display:none">
+                    <div class="panel panel-warning">
+                        <div class="panel-body" align="center">
+                            <img name="pic" id="pic12" height="100%" src="assets/img/album_default_picture.png">
+                        </div>
+                        <div class="panel-heading">
+                            <p name="label" id="label12" style="margin:0;padding:0">Panel Footer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>                    
+                
+                <footer><p>Copyright &copy; 2017. No3b All rights reserved.<a target="_blank" href="#">联系我们</a></p>
+                </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            showPics();
+        });
+        function getparam1(){
+            var url=location.href;
+            var tmp1=url.split("?")[1];
+            var tmp2=tmp1.split("&")[0];
+            var tmp3=tmp2.split("=")[1];
+            var param1=tmp3;
+            return param1;
+        } 
+        function showPics(){
+        var params = "picSetId="+getparam1();  
+        var url = "http://114.115.142.42/Operation/GetPicSet";  
+            $.ajax({  
+                type: 'POST',  
+                url: url,  
+                dataType: 'text',  
+                data: params,  
+                beforeSend: function(){  
+                },  
+                complete: function(XMLHttpRequest, textStatus) { 
+                },  
+                success: function(data) { 
+                    if(data=="invalid!"){  
+                        window.alert("未登录！非法操作！");
+                    }else{
+                        //获取页面中的元素
+                        var divArr=document.getElementsByName("picDiv");
+                        var picArr=document.getElementsByName("pic");
+                        var labelArr=document.getElementsByName("label");
+                      
+                        var myobj=eval(data);
+                        for(var i=0;i<myobj.length;i++){
+                            //显示图片div
+                            divArr[i].style.display="block";
+                            //更改图片地址
+                            if(myobj[i].Url!=null&&myobj[i].Url!="")
+                                picArr[i].src=myobj[i].Url;
+                            //更改标签
+                            if(myobj[i].desNum==3){
+                                labelArr[i].innerHTML=myobj[i].desContent1+"；"+myobj[i].desContent2+"；"+myobj[i].desContent3;
+                            }else if(myobj[i].desNum==2){
+                                labelArr[i].innerHTML=myobj[i].desContent1+"；"+myobj[i].desContent2;
+                            }else if(myobj[i].desNum==1){
+                                labelArr[i].innerHTML=myobj[i].desContent1
+                            }else if(myobj[i].desNum==0){
+                                labelArr[i].innerHTML="空";
+                            }
+                            
+                        }
+                    }
+                },
+                //error:function(XMLHttpRequest, textStatus, errorThrown){
+                //通常情况下textStatus和errorThrown只有其中一个包含信息
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    window.alert(textStatus);
+                }
+            });  
+  
+}
+
+    </script>
+    
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+ 
+</body>
+</html>
