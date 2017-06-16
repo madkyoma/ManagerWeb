@@ -9,11 +9,14 @@ body {
     background: #3E3E3E;
 }
 .album{
-  height:130px;
+  height:140px;
 }
 .album_cover{
   width:30%;
   height:100%;
+}
+.row{
+  margin-bottom: 25px;
 }
 
  #wrapper {
@@ -30,7 +33,7 @@ body {
     margin:10px 20px 10px 0px;
     background-color:transparent;
     padding: 15px 30px;
-    min-height:1200px;
+    min-height:800px;
 }
 .header .container-fluid{
 padding:0;
@@ -45,6 +48,7 @@ padding:0;
 h1, .h1, h2, .h2, h3, .h3 {
 margin-top: 7px;
 margin-bottom: -5px;
+word-wrap:break-word;
 }
 h2 {
     color: #000;

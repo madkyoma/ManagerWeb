@@ -11,7 +11,7 @@ function createPicSet(){
                   complete: function(XMLHttpRequest, textStatus) { 
                   },  
                   success: function(data) { 
-                    if(data=="success"){
+                    if(data=="Success"){
                       window.alert("创建成功！");
                     }else{
                       window.alert(data);

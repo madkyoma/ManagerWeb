@@ -114,7 +114,7 @@
                                 <input class="form-control" type="text" id="question" size="30" placeholder="图片集问题描述（若不填则默认问题为“描述图片内容”）" style="width:80%;"/> 
                         </div>
                         
-                            <input class="btn btn-warning" type="button" name="submit" value="上传" onclick="createPicSet()"> 
+                            <input class="btn btn-warning" type="button" name="submit" value="创建" onclick="createPicSet()"> 
                             <input class="btn btn-default" type="reset" name="reset" value="重置">
                         </form>
                     </div>
@@ -154,7 +154,7 @@
                   complete: function(XMLHttpRequest, textStatus) { 
                   },  
                   success: function(data) { 
-                    if(data=="success"){
+                    if(data=="Success"){
                       window.alert("创建成功！");
                     }else{
                       window.alert(data);
