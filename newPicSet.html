@@ -159,18 +159,19 @@
                             </div>    
                         </div> 
                     </form>
-                        <form id="uploadForm" method="POST" enctype="MULTIPART/FORM-DATA" action="http://114.115.142.42/Operation/postImg"> 
+                        <form name="uploadForm" method="POST" enctype="MULTIPART/FORM-DATA" action="http://114.115.142.42/Operation/postImg"> 
                         <div style="padding-bottom:15px;padding-top:0px">
-                            <input type="hidden" id="PSName" value="图集名"/>
+                            <input type="hidden" id="PSName" name="picSetName" value="图集名"/>
+                            <input type="hidden" id="time" name="time" value=""/>
                             <h4>图片1:</h4>
-                                <input type="file" name="file1" size="30" accept="image/*"/> 
+                                <input type="file" name="file1" size="30" accept="image/*" required /> 
                             <h4>图片2:</h4>
                                 <input type="file" name="file2" size="30" accept="image/*"/>  
                             <h4>图片3:</h4>
                                 <input type="file" name="file3" size="30" accept="image/*"/> 
                         </div>
                         
-                            <input class="btn btn-warning" type="submit" name="submit" value="上传"> 
+                            <input class="btn btn-warning" type="button" name="submit" value="上传" onclick="upload()"> 
                             <input class="btn btn-default" type="reset" name="reset" value="重置">
                         </form>
                     </div>
@@ -193,6 +194,7 @@
     $(document).ready(function() {
             getPicSetNames();
         });
+
     function getPicSetNames(){
         var params = " ";  
         var url = "http://114.115.142.42/Operation/GetPicSet";  
@@ -265,6 +267,57 @@
         }  
     }  
 
+    window.onload=function(){
+        //定时器每秒调用一次date()
+        setInterval(function(){date();},1000);
+    }
+    //js 获取当前时间
+    function date(){
+        var oDiv=document.getElementById("time");
+        var date=new Date();
+        var year=date.getFullYear();//当前年份
+        var month=date.getMonth();//当前月份
+        var data=date.getDate();//天
+        var hours=date.getHours();//小时
+        var minute=date.getMinutes();//分
+        var second=date.getSeconds();//秒
+        var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" "+fnW(hours)+":"+fnW(minute)+":"+fnW(second);
+        oDiv.value=time;
+    }
+    //补位 当某个字段不是两位数时补0
+    function fnW(str){
+        var num;
+        str>10?num=str:num="0"+str;
+        return num;
+    } 
+
+    function upload(){
+        var formData =  new FormData(document.forms.namedItem("uploadForm"));
+        $.ajax({ 
+            url : Url, 
+            type : 'POST', 
+            data : formData, 
+            // 告诉jQuery不要去处理发送的数据
+            processData : false, 
+            // 告诉jQuery不要去设置Content-Type请求头
+            contentType : false,
+            beforeSend:function(){
+                window.alert("正在上传，请稍候...");
+            },
+            success : function(data) { 
+                if(data=="successful upload"){
+                    window.alert("上传成功");
+                }else{
+                    window.alert(data);
+                }
+            }, 
+            //error:function(XMLHttpRequest, textStatus, errorThrown){
+            //通常情况下textStatus和errorThrown只有其中一个包含信息
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                window.alert(textStatus);
+            }
+        });
+    }
 
     </script>
       <!-- Bootstrap Js -->
