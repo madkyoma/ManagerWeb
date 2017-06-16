@@ -92,7 +92,7 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
           <div class="header"> 
-                        <h1 class="page-header">
+                        <h1 class="page-header" id="album_name">
                            图片集名称 <small>Welcome 管理员</small>
                         </h1>
                         <ol class="breadcrumb">
@@ -253,6 +253,7 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            document.getElementById("album_name").innerHTML=getparam2()+"<small>Welcome 管理员</small>";
             showPics();
         });
         function getparam1(){
@@ -262,6 +263,14 @@
             var tmp3=tmp2.split("=")[1];
             var param1=tmp3;
             return param1;
+        } 
+        function getparam2(){
+            var url=location.href;
+            var tmp1=url.split("?")[1];
+            var tmp2=tmp1.split("&")[1];
+            var tmp3=tmp2.split("=")[1];
+            var param2=tmp3;
+            return param2;
         } 
         function showPics(){
         var params = "picSetId="+getparam1();  

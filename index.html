@@ -146,7 +146,7 @@
             <!--  图集第一行row  -->
             <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board"  id="album1" style="display:none;" onclick="showPics(albumIDArr[0].innerHTML)">
+                    <div class="board"  id="album1" style="display:none;" onclick="showPics(1)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -163,7 +163,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album2" style="display:none;" onclick="showPics(albumIDArr[1].innerHTML)">
+                    <div class="board" id="album2" style="display:none;" onclick="showPics(2)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -180,7 +180,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album3" style="display:none;" onclick="showPics(albumIDArr[2].innerHTML)">
+                    <div class="board" id="album3" style="display:none;" onclick="showPics(3)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -197,7 +197,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album4" style="display:none;" onclick="showPics(albumIDArr[3].innerHTML)">
+                    <div class="board" id="album4" style="display:none;" onclick="showPics(4)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -219,7 +219,7 @@
             <!--  图集第二行row  -->
             <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board"  id="album5" style="display:none;" onclick="showPics(albumIDArr[4].innerHTML)">
+                    <div class="board"  id="album5" style="display:none;" onclick="showPics(5)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -236,7 +236,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album6" style="display:none;" onclick="showPics(albumIDArr[5].innerHTML)">
+                    <div class="board" id="album6" style="display:none;" onclick="showPics(6)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -253,7 +253,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album7" style="display:none;" onclick="showPics(albumIDArr[6].innerHTML)">
+                    <div class="board" id="album7" style="display:none;" onclick="showPics(7)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -270,7 +270,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album8" style="display:none;" onclick="showPics(albumIDArr[7].innerHTML)">
+                    <div class="board" id="album8" style="display:none;" onclick="showPics(8)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -292,7 +292,7 @@
                 <!--  图集第三行row  -->
             <div class="row">
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board"  id="album9" style="display:none;" onclick="showPics(albumIDArr[8].innerHTML)">
+                    <div class="board"  id="album9" style="display:none;" onclick="showPics(9)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -309,7 +309,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album10" style="display:none;" onclick="showPics(albumIDArr[9].innerHTML)">
+                    <div class="board" id="album10" style="display:none;" onclick="showPics(10)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -326,7 +326,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album11" style="display:none;" onclick="showPics(albumIDArr[10].innerHTML)">
+                    <div class="board" id="album11" style="display:none;" onclick="showPics(11)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -343,7 +343,7 @@
                  </div>
                     
                             <div class="col-md-3 col-sm-12 col-xs-12 album">
-                    <div class="board" id="album12" style="display:none;" onclick="showPics(albumIDArr[11].innerHTML)">
+                    <div class="board" id="album12" style="display:none;" onclick="showPics(12)">
                         <div class="panel panel-primary">
                             <div class="number">
                                 <h3>
@@ -399,8 +399,20 @@
                         document.getElementById("album_id10"),
                         document.getElementById("album_id11"),
                         document.getElementById("album_id12"));
-        function showPics(picSetId){
-            var myurl="showPics.html"+"?"+"picSetId="+picSetId;
+        var albumNameArr=new Array(document.getElementById("album_name1"),
+                        document.getElementById("album_name2"),
+                        document.getElementById("album_name3"),
+                        document.getElementById("album_name4"),
+                        document.getElementById("album_name5"),
+                        document.getElementById("album_name6"),
+                        document.getElementById("album_name7"),
+                        document.getElementById("album_name8"),
+                        document.getElementById("album_name9"),
+                        document.getElementById("album_name10"),
+                        document.getElementById("album_name11"),
+                        document.getElementById("album_name12"));
+        function showPics(i){
+            var myurl="showPics.html?picSetId="+albumIDArr[i-1].innerHTML+"&picSetName="albumNameArr[i-1].innerHTML;
             window.location.assign(myurl); 
         }
     </script>
