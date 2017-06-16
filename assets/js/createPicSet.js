@@ -1,11 +1,11 @@
 function createPicSet(){
-        var formData =  new FormData(document.forms.namedItem("createPSForm"));
+        var params="";
         var url = "http://114.115.142.42/Operation/CreatePicSet";  
                 $.ajax({  
                   type: 'POST',  
                   url: url,  
                   dataType: 'text',  
-                  data: formData,  
+                  data: params,  
                   beforeSend: function(){  
                   },  
                   complete: function(XMLHttpRequest, textStatus) { 
@@ -24,7 +24,4 @@ function createPicSet(){
                   }
                 });  
 
-
-
-    
 }

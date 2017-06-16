@@ -109,9 +109,9 @@
                         <form name="createPSForm" method="POST" enctype="MULTIPART/FORM-DATA" action="http://114.115.142.42/Operation/postImg"> 
                         <div style="padding-bottom:15px;padding-top:0px">
                             <h4>请输入图片集名称:</h4>
-                                <input class="form-control" type="text" name="picSetName" size="30" required placeholder="图片集名称" style="width:80%;" /> 
+                                <input class="form-control" type="text" id="picSetName" size="30" required placeholder="图片集名称" style="width:80%;" /> 
                             <h4>请输入对该图片集的提问:</h4>
-                                <input class="form-control" type="text" name="question" size="30" placeholder="图片集问题描述（若不填则默认问题为“描述图片内容”）" style="width:80%;"/> 
+                                <input class="form-control" type="text" id="question" size="30" placeholder="图片集问题描述（若不填则默认问题为“描述图片内容”）" style="width:80%;"/> 
                         </div>
                         
                             <input class="btn btn-warning" type="button" name="submit" value="上传" onclick="createPicSet()"> 
@@ -135,13 +135,20 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script type="text/javascript">
         function createPicSet(){
-        var formData =  new FormData(document.forms.namedItem("createPSForm"));
+            var PSName=document.getElementById("picSetName").value;
+            var question;
+            if(document.getElementById("question").value!=null&&document.getElementById("question").value!=""){
+                question=document.getElementById("question").value;
+            }else{
+                question="请描述该图片";
+            }
+        var params = "picSetName="+PSName+"&question="+question;
         var url = "http://114.115.142.42/Operation/CreatePicSet";  
                 $.ajax({  
                   type: 'POST',  
                   url: url,  
                   dataType: 'text',  
-                  data: formData,  
+                  data: params,  
                   beforeSend: function(){  
                   },  
                   complete: function(XMLHttpRequest, textStatus) { 
