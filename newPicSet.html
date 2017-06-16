@@ -1,17 +1,279 @@
-<html> 
-    <head>  <title>上传文件</title></head> 
-    <body > 
-      <form name="uploadForm" method="POST" 
-        enctype="MULTIPART/FORM-DATA" 
-        action="http://114.115.142.42/Operation/postImg"> 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <title>志愿者端-发布新的图片</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="assets/css/select2.min.css" rel="stylesheet" >
+    <link href="assets/css/checkbox3.min.css" rel="stylesheet" >
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> BRILLIANT</strong></a>
+				<div id="sideNav" href="">
+		<i class="fa fa-bars icon"></i> 
+		</div>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="color:#F30">
+                        <i class="fa fa-user fa-fw"></i> 
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 信息修改</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a href="index.html"><i class="fa fa-dashboard"></i> 我发布的图片</a>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="ui-elements.html"><i class="fa fa-edit"></i> 发布新的图片</a>
+                    </li> 
+                    
+                    
+                    <li>
+                        <a href="tab-panel.html"><i class="fa fa-table"></i> 标签结果导出</a>
+                    </li>
+                    <li>
+                        <a href="form.html"><i class="fa fa-user"></i> 个人信息修改 </a>
+                    </li>
+                                                
+                    <li>
+                        <a href="table.html"><i class="fa fa-qrcode"></i> Table</a>
+                    </li>
+                    
+                    <li>
+                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+		  <div class="header"> 
+                        <h1 class="page-header">
+                           发布新的图片 <small>Welcome 管理员</small>
+                        </h1>
+						<ol class="breadcrumb">
+					  <li><a href="ui-elements.html">创建新图片集</a></li>
+					  <li class="active">选择已有图片集 </li>
+					</ol> 
+									
+		</div>
+            <div id="page-inner"> 
+                <div class="row">
+                    <div class="col-xs-12">
+                    <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:0px">
+                    <form > 
+                        <h4>请选择图片集：</h4>
+                        <div>
+                            <div id="rdiv1" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio1" name="picSetName" value="option1" onclick="getValue()">
+                                <label for="radio1" id="radio_label1">
+                                    图集名1
+                                </label>
+                            </div>
+                            <div id="rdiv2" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio2" name="picSetName" value="option2" onclick="getValue()">
+                                <label for="radio2" id="radio_label2">
+                                    图集名2
+                                </label>
+                            </div>
+                            <div id="rdiv3" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio3" name="picSetName" value="option3" onclick="getValue()">
+                                <label for="radio3" id="radio_label3">
+                                    图集名3
+                                </label>
+                            </div>
+                            <div id="rdiv4" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio4" name="picSetName" value="option4" onclick="getValue()">
+                                <label for="radio4" id="radio_label4">
+                                    图集名4
+                                </label>
+                            </div>
+                            <div id="rdiv5" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio5" name="picSetName" value="option5" onclick="getValue()">
+                                <label for="radio5" id="radio_label5">
+                                    图集名5
+                                </label>
+                            </div>  
+                            <div id="rdiv6" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio6" name="picSetName" value="option6" onclick="getValue()">
+                                <label for="radio6" id="radio_label6">
+                                    图集名6
+                                </label>
+                            </div> 
+                            <div id="rdiv7" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio7" name="picSetName" value="option7" onclick="getValue()">
+                                <label for="radio7" id="radio_label7">
+                                    图集名7
+                                </label>
+                            </div>   
+                            <div id="rdiv8" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio8" name="picSetName" value="option8" onclick="getValue()">
+                                <label for="radio8" id="radio_label8">
+                                    图集名8
+                                </label>
+                            </div>    
+                        </div> 
+                    </form>
+                        <form id="uploadForm" method="POST" enctype="MULTIPART/FORM-DATA" action="http://114.115.142.42/Operation/postImg"> 
+                        <div style="padding-bottom:15px;padding-top:0px">
+                            <input type="hidden" id="PSName" value="图集名"/>
+                            <h4>图片1:</h4>
+                                <input type="file" name="file1" size="30" accept="image/*"/> 
+                            <h4>图片2:</h4>
+                                <input type="file" name="file2" size="30" accept="image/*"/>  
+                            <h4>图片3:</h4>
+                                <input type="file" name="file3" size="30" accept="image/*"/> 
+                        </div>
+                        
+                            <input class="btn btn-warning" type="submit" name="submit" value="上传"> 
+                            <input class="btn btn-default" type="reset" name="reset" value="重置">
+                        </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>    
+				 
+				
+				<footer><p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p></footer>
+				</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+            getPicSetNames();
+        });
+    function getPicSetNames(){
+        var params = " ";  
+        var url = "http://114.115.142.42/Operation/GetPicSet";  
+                $.ajax({  
+                  type: 'POST',  
+                  url: url,  
+                  dataType: 'text',  
+                  data: params,  
+                  beforeSend: function(){  
+                  },  
+                  complete: function(XMLHttpRequest, textStatus) { 
+                  },  
+                  success: function(data) { 
+                    if(data=="invalid!"){  
+                      window.alert("未登录！非法操作！");
+                    }else{
+                      //获取页面中的元素
+                        var rdivArr=new Array(document.getElementById("rdiv1"),
+                                            document.getElementById("rdiv2"),
+                                            document.getElementById("rdiv3"),
+                                            document.getElementById("rdiv4"),
+                                            document.getElementById("rdiv5"),
+                                            document.getElementById("rdiv6"),
+                                            document.getElementById("rdiv7"),
+                                            document.getElementById("rdiv8"));
+                        var radioLabelArr=new Array(document.getElementById("radio_label1"),
+                                                    document.getElementById("radio_label2"),
+                                                    document.getElementById("radio_label3"),
+                                                    document.getElementById("radio_label4"),
+                                                    document.getElementById("radio_label5"),
+                                                    document.getElementById("radio_label6"),
+                                                    document.getElementById("radio_label7"),
+                                                    document.getElementById("radio_label8"));
+                        var radioArr=new Array(document.getElementById("radio1"),
+                                               document.getElementById("radio2"),
+                                               document.getElementById("radio3"),
+                                               document.getElementById("radio4"),
+                                               document.getElementById("radio5"),
+                                               document.getElementById("radio6"),
+                                               document.getElementById("radio7"),
+                                               document.getElementById("radio8"));
+                        var myobj=eval(data);
+                      for(var i=0;i<myobj.length;i++){
+                        //显示图集div
+                        rdivArr[i].style.display="block";
+                        //更改图集名称
+                        if(myobj[i].PicSetName!=null&&myobj[i].PicSetName!=""){
+                            radioLabelArr[i].innerHTML=myobj[i].PicSetName;
+                            radioArr[i].value=myobj[i].PicSetName;
+                        }
+                      }
+                    }
+                  },
+                  //error:function(XMLHttpRequest, textStatus, errorThrown){
+                  //通常情况下textStatus和errorThrown只有其中一个包含信息
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    window.alert(textStatus);
+                  }
+                });  
+
+    }
+    //function getPicSetNames() over
+
+    function getValue(){   
+        var radio = document.getElementsByName("picSetName");  
+        for (i=0; i<radio.length; i++) {  
+            if (radio[i].checked){  
+                window.alert(radio[i].value); 
+                document.getElementById("PSName").value=radio[i].value;
+            }  
+        }  
+    }  
+
+
+    </script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
  
-        picSetName Name:<input type="text" name="picSetName" size="30"/> 
-        
-Upload File1:<input type="file" name="file1" size="30"/> 
-        
-Upload File2:<input type="file" name="file2" size="30"/>   
-        <input type="submit" name="submit" value="上传"> 
-        <input type="reset" name="reset" value="重置"> 
-      </form> 
-    </body> 
-</html> 
+</body>
+</html>
