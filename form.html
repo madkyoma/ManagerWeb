@@ -124,7 +124,7 @@
                                 <input type="radio" id="radio_unknown" name="gender" value="unknown" onclick="getValue()">
                                 <label for="radio_unknown">未知</label>
                             </div>
-                            <h4>密码:</h4>
+                            <h4>密码:</h4> <p id="hiddenPass"  style="display:none;"></p>
                                 <input class="form-control" type="password" id="password" size="30" placeholder="********" style="width:40%;"/> 
                         </div>
                         
@@ -159,7 +159,7 @@
         });
         function init(){
             var params = " ";
-            var url = "114.115.142.42/Operation/xxx";  
+            var url = "http://114.115.142.42/Operation/ShowManagerInfo";  
                 $.ajax({  
                     type: 'POST',  
                     url: url,  
@@ -172,6 +172,7 @@
                         document.getElementById("email").value=myobj.email;
                         document.getElementById("name").value=myobj.name;
                         document.getElementById("phone").value=myobj.phone;
+                        document.getElementById("hiddenPass").innerHTML=myobj.password;
                         var radio = document.getElementsByName("gender");  
                         for (var i=0; i<radio.length; i++) {  
                             if (radio[i].value==myobj.gender)  
@@ -217,11 +218,11 @@
             params+=getValue();
             params+="&password=";
             if(document.getElementById("password").value==""||document.getElementById("password").value==null){
-                params+=document.getElementById("password").placeholder;
+                params+=document.getElementById("hiddenPass").innerHTML;
             }else{
                 params+=document.getElementById("password").value;
             }
-            var url = "114.115.142.42/Operation/xxx";  
+            var url = "http://114.115.142.42/Operation/ChangeManagerInfo";  
                 $.ajax({  
                     type: 'POST',  
                     url: url,  
