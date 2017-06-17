@@ -63,7 +63,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 我发布的图片</a>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 标签结果导出</a>
                     </li>
                     <li>
                         <a href="create-picSet.html"><i class="fa fa-edit"></i> 发布新的图片</a>
@@ -76,7 +76,7 @@
                     <li>
                         <a href="information.html"><i class="fa fa-user"></i> 个人信息修改 </a>
                     </li>
-                           
+                       
                 </ul>
 
             </div>
@@ -85,12 +85,16 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
           <div class="header"> 
+                        <a href="114.115.142.42/result/DownLoad.txt" download="tags.txt" style="float:right;padding-top:42px;padding-right:100px;">
+                            <input class="btn btn-warning" type="button" name="export" value="导出标签化结果" onclick="download()">
+                        </a>
                         <h1 class="page-header" id="album_name">
                            图片集名称 <small>Welcome 管理员</small>
                         </h1>
+                        
                         <ol class="breadcrumb">
-                            <li><a href="index.html" id="newPicSet">返回图片集目录 </a></li>
-                    </ol> 
+                            <li><a href="export.html" id="newPicSet">返回图片集目录 </a></li>
+                        </ol> 
                                     
         </div>
             <div id="page-inner"> 
@@ -314,7 +318,29 @@
                 }
             });  
   
-}
+        }
+        function download(){
+            var params = "picSetId="+getparam1();
+            var url = "http://114.115.142.42/Operation/ExportPhotos";  
+                $.ajax({  
+                  type: 'POST',  
+                  url: url,  
+                  dataType: 'text',  
+                  data: params,  
+                  beforeSend: function(){  
+                  },  
+                  complete: function(XMLHttpRequest, textStatus) { 
+                  },  
+                  success: function(data) { 
+                    window.alert(data); 
+                  },
+                  //error:function(XMLHttpRequest, textStatus, errorThrown){
+                  //通常情况下textStatus和errorThrown只有其中一个包含信息
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    window.alert(textStatus);
+                  }
+                });  
+        }
 
     </script>
     

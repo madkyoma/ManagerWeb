@@ -43,7 +43,7 @@
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="form.html"><i class="fa fa-user fa-fw"></i> 信息修改</a>
+                        <li><a href="information.html"><i class="fa fa-user fa-fw"></i> 信息修改</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
                         </li>
@@ -70,7 +70,7 @@
                         <a class="active-menu" href="export.html"><i class="fa fa-table"></i> 标签结果导出</a>
                     </li>
                     <li>
-                        <a href="form.html"><i class="fa fa-user"></i> 个人信息修改 </a>
+                        <a href="information.html"><i class="fa fa-user"></i> 个人信息修改 </a>
                     </li>
                         
                 </ul>
@@ -356,27 +356,8 @@
                         document.getElementById("album_name11"),
                         document.getElementById("album_name12"));
         function showPics(i){
-            var params = "picSetId="+albumIDArr[i].innerHTML;
-            var url = "http://114.115.142.42/Operation/ExportPhotos";  
-                $.ajax({  
-                  type: 'POST',  
-                  url: url,  
-                  dataType: 'text',  
-                  data: params,  
-                  beforeSend: function(){  
-                  },  
-                  complete: function(XMLHttpRequest, textStatus) { 
-                  },  
-                  success: function(data) { 
-                    window.alert(data); 
-                    document.execCommand("saveAs",true,"http://114.115.142.42/result/DownLoad.txt");
-                  },
-                  //error:function(XMLHttpRequest, textStatus, errorThrown){
-                  //通常情况下textStatus和errorThrown只有其中一个包含信息
-                  error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    window.alert(textStatus);
-                  }
-                });  
+            var myurl="exportPics.html"+"?"+"picSetId="+albumIDArr[i].innerHTML+"&picSetName="+albumNameArr[i].innerHTML;
+            window.location.assign(myurl); 
         }
     </script>
     <!-- Bootstrap Js -->
