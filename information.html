@@ -121,7 +121,7 @@
                                 <label for="radio_female">女</label>
                             </div>
                             <div class="radio3 radio-check radio-warning radio-inline">
-                                <input type="radio" id="radio_unknown" name="gender" value="unknown" onclick="getValue()">
+                                <input type="radio" id="radio_unknown" name="gender" value="unknow" onclick="getValue()">
                                 <label for="radio_unknown">未知</label>
                             </div>
                             <h4>密码:</h4> <p id="hiddenPass"  style="display:none;"></p>
@@ -179,7 +179,7 @@
                             if (radio[i].value==myobj.gender)  
                                 radio[i].checked="true";  
                         }
-                        var len=parseInt(myobj.passLen);
+                        var len=myobj.passLen;
                         var password=document.getElementById("password");
                         password.value="";
                         for (var i=0; i<len; i++) { 
