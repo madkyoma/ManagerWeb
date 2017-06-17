@@ -168,6 +168,7 @@
                     beforeSend: function(){},  
                     complete: function(XMLHttpRequest, textStatus) {},  
                     success: function(data) { 
+                        window.alert(data);
                         var myobj = eval("("+data+")");
                         document.getElementById("email").value=myobj.email;
                         document.getElementById("name").value=myobj.name;
