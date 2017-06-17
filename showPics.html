@@ -246,27 +246,16 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            document.getElementById("album_name").innerHTML=getparam2()+"<small>Welcome 管理员</small>";
+            document.getElementById("album_name").innerHTML=getUrlParam("picSetName")+"<small>Welcome 管理员</small>";
             showPics();
         });
-        function getparam1(){
-            var url=location.href;
-            var tmp1=url.split("?")[1];
-            var tmp2=tmp1.split("&")[0];
-            var tmp3=tmp2.split("=")[1];
-            var param1=tmp3;
-            return param1;
-        } 
-        function getparam2(){
-            var url=location.href;
-            var tmp1=url.split("?")[1];
-            var tmp2=tmp1.split("&")[1];
-            var tmp3=tmp2.split("=")[1];
-            var param2=tmp3;
-            return param2;
-        } 
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
         function showPics(){
-        var params = "picSetId="+getparam1();  
+        var params = "picSetId="+getUrlParam("picSetId");  
         var url = "http://114.115.142.42/Operation/GetPhotos";  
             $.ajax({  
                 type: 'POST',  
