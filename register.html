@@ -33,7 +33,7 @@
 				<input type="button" value="注册" />
 			</div>
 		</form><!-- form -->
-        <div>
+        <div style="padding-bottom:5px;">
         	<p id="demo"></p>
         </div>
 	</section><!-- content -->
@@ -67,9 +67,11 @@
                   },  
                   success: function(data) {  
                     if(data=="success"){  
+                      window.alert("注册成功！");
                       window.location.href="login.html";
                     }else if(data=="已被注册"){
-                      document.getElementById("demo").innerHTML = "该邮箱已被注册！";
+                      window.alert("该邮箱已被注册！");
+                      document.getElementById("demo").innerHTML = "" ;
                     }else{
                       document.getElementById("demo").innerHTML = data ;
                     }

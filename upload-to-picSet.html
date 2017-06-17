@@ -44,12 +44,12 @@
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 信息修改</a>
+                        <li><a href="form.html"><i class="fa fa-user fa-fw"></i> 信息修改</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -76,14 +76,7 @@
                     <li>
                         <a href="form.html"><i class="fa fa-user"></i> 个人信息修改 </a>
                     </li>
-                                                
-                    <li>
-                        <a href="table.html"><i class="fa fa-qrcode"></i> Table</a>
-                    </li>
                     
-                    <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li>
                 </ul>
 
             </div>
@@ -107,7 +100,7 @@
                     <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:0px">
                     <form > 
-                        <h4>请选择图片集：</h4>
+                        <h4 id="PSchoose-title">请选择图片集：</h4>
                         <div>
                             <div id="rdiv1" class="radio3 radio-check radio-warning radio-inline" style="display:none">
                                 <input type="radio" id="radio1" name="picSetName" value="option1" onclick="getValue()">
@@ -171,7 +164,7 @@
                                 <input type="file" name="file3" size="30" accept="image/*"/> 
                         </div>
                         
-                            <input class="btn btn-warning" type="button" name="submit" value="上传" onclick="upload()"> 
+                            <input class="btn btn-warning" type="button" id="submit" name="submit" value="上传" onclick="upload()"> 
                             <input class="btn btn-default" type="reset" name="reset" value="重置">
                         </form>
                     </div>
@@ -237,6 +230,10 @@
                                                document.getElementById("radio7"),
                                                document.getElementById("radio8"));
                         var myobj=eval(data);
+                        if(myobj.length==0){
+                            document.getElementById("PSchoose-title").innerHTML="无图片集！请先创建图片集";
+                            document.getElementById("submit").disabled=true; 
+                        }
                       for(var i=0;i<myobj.length;i++){
                         //显示图集div
                         rdivArr[i].style.display="inline-block";
