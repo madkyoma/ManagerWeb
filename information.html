@@ -169,7 +169,7 @@
                     complete: function(XMLHttpRequest, textStatus) {},  
                     success: function(data) { 
                         var myobj = eval("("+data+")");
-                        document.getElementById("email").placeholder=myobj.email;
+                        document.getElementById("email").value=myobj.email;
                         document.getElementById("name").placeholder=myobj.name;
                         document.getElementById("phone").placeholder=myobj.phone;
                         document.getElementById("hiddenPass").innerHTML=myobj.password;
