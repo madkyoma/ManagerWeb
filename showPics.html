@@ -246,21 +246,29 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            document.getElementById("album_name").innerHTML=getUrlParam("picSetName")+"<small>Welcome 管理员</small>";
+            document.getElementById("album_name").innerHTML=getparam2()+"<small>Welcome 管理员</small>";
             showPics();
         });
-        function getUrlParam(name) {
-             // 获取参数
-            var url = window.location.search;
-            // 正则筛选地址栏
-            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-            // 匹配目标参数
-            var result = url.substr(1).match(reg);
-            //返回参数值
-            return result ? decodeURIComponent(result[2]) : null;
-        }
+        function getparam1(){
+            var url=location.href;
+            url = decodeURIComponent( url );
+            var tmp1=url.split("?")[1];
+            var tmp2=tmp1.split("&")[0];
+            var tmp3=tmp2.split("=")[1];
+            var param1=tmp3;
+            return param1;
+        } 
+        function getparam2(){
+            var url=location.href;
+            url = decodeURIComponent( url );
+            var tmp1=url.split("?")[1];
+            var tmp2=tmp1.split("&")[1];
+            var tmp3=tmp2.split("=")[1];
+            var param2=tmp3;
+            return param2;
+        } 
         function showPics(){
-        var params = "picSetId="+getUrlParam("picSetId");  
+        var params = "picSetId="+getparam1();  
         var url = "http://114.115.142.42/Operation/GetPhotos";  
             $.ajax({  
                 type: 'POST',  
