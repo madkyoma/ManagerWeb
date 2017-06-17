@@ -251,7 +251,7 @@
         });
         function getparam1(){
             var url=location.href;
-            url = decodeURIComponent( url );
+            url = decodeURI( url );
             var tmp1=url.split("?")[1];
             var tmp2=tmp1.split("&")[0];
             var tmp3=tmp2.split("=")[1];
@@ -260,7 +260,7 @@
         } 
         function getparam2(){
             var url=location.href;
-            url = decodeURIComponent( url );
+            url = decodeURI( url );
             var tmp1=url.split("?")[1];
             var tmp2=tmp1.split("&")[1];
             var tmp3=tmp2.split("=")[1];
