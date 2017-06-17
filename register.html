@@ -50,6 +50,22 @@
   		var phone=document.getElementById("phone").value;
       var name=document.getElementById("name").value;  
       var password=document.getElementById("password").value;
+      if(username==""){
+        window.alert("电子邮箱不能为空！");
+        return;
+      }
+      if(phone==""){
+        window.alert("手机号不能为空！");
+        return;
+      }
+      if(name==""){
+        window.alert("电子邮箱不能为空！");
+        return;
+      }
+      if(password==""){
+        window.alert("密码不能为空！");
+        return;
+      }
     	var params = "mailAddress="+username+"&password="+password+"&name="+name+"&password="+password;
 
       var url = "http://114.115.142.42/Operation/ManagerRegister"; 

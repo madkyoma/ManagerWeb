@@ -43,6 +43,14 @@
 	function login(){
 		  var username=document.getElementById("email").value;  
   		var password=document.getElementById("password").value;
+      if(username==""){
+        window.alert("电子邮箱不能为空！");
+        return;
+      }
+      if(password==""){
+        window.alert("密码不能为空！");
+        return;
+      }
     	var params = "mailAddress="+username+"&password="+password;
 
       var url = "http://114.115.142.42/Operation/ManagerLogin"; 
@@ -60,7 +68,6 @@
                   },  
                   success: function(data) {  
                     if(data=="success"){  
-                      window.alert("登录成功");
                       window.location.href="index.html";
                     }else if(data=="Wrong password"){
                       document.getElementById("demo").innerHTML = "" ;

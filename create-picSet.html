@@ -125,6 +125,10 @@
     <script type="text/javascript">
         function createPicSet(){
             var PSName=document.getElementById("picSetName").value;
+            if(PSName==""){
+                window.alert("电子邮箱不能为空！");
+                return;
+            }
             var question;
             if(document.getElementById("question").value!=null&&document.getElementById("question").value!=""){
                 question=document.getElementById("question").value;
