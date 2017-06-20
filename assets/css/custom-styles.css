@@ -241,7 +241,8 @@ i.fa.fa-bars:hover {
   width:65%;
 }
 .number h3 {
-    font-size: 32px;
+    font-size: 26px;
+    margin-left: 5px;
     color: #676767;
 }
 .number small {
