@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="" name="description" />
-    <title>志愿者端-发布新的图片</title>
+    <title>管理者端-发布新的图片</title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -35,7 +35,7 @@
 		</div>
             </div>
 
-            <ul class="nav navbar-top-links navbar-right">
+            <ul class="nav navbar-top-links navbar-right" style="float:right;">
                 
                 <!-- /.dropdown -->
                 <li class="dropdown">
@@ -56,6 +56,11 @@
                 </li>
                 <!-- /.dropdown -->
             </ul>
+
+            <div method="get" id="searchdiv" style="float:right; margin-top:13px;">
+                <input style="float:left;width:70%;" class="form-control" type="text" name="s" id="s" placeholder="搜索">
+                <button style="float:left;margin-left:10px;" class="btn" title="搜索" type="button">搜索</button>
+            </div>
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -162,6 +167,18 @@
                                     图集名10
                                 </label>
                             </div> 
+                            <div id="rdiv11" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio11" name="picSetName" value="option11" onclick="getValue()">
+                                <label for="radio11" id="radio_label11">
+                                    图集名11
+                                </label>
+                            </div>
+                            <div id="rdiv12" class="radio3 radio-check radio-warning radio-inline" style="display:none">
+                                <input type="radio" id="radio12" name="picSetName" value="option12" onclick="getValue()">
+                                <label for="radio12" id="radio_label12">
+                                    图集名12
+                                </label>
+                            </div>  
                         </div> 
                     </form>
                         <form name="uploadForm" method="POST" enctype="MULTIPART/FORM-DATA" action="http://114.115.142.42/Operation/postImg"> 
@@ -222,7 +239,9 @@
                                             document.getElementById("rdiv7"),
                                             document.getElementById("rdiv8"),
                                             document.getElementById("rdiv9"),
-                                            document.getElementById("rdiv10"));
+                                            document.getElementById("rdiv10"),
+                                            document.getElementById("rdiv11"),
+                                            document.getElementById("rdiv12"));
                         var radioLabelArr=new Array(document.getElementById("radio_label1"),
                                                     document.getElementById("radio_label2"),
                                                     document.getElementById("radio_label3"),
@@ -232,7 +251,9 @@
                                                     document.getElementById("radio_label7"),
                                                     document.getElementById("radio_label8"),
                                                     document.getElementById("radio_label9"),
-                                                    document.getElementById("radio_label10"));
+                                                    document.getElementById("radio_label10"),
+                                                    document.getElementById("radio_label11"),
+                                                    document.getElementById("radio_label12"));
                         var radioArr=new Array(document.getElementById("radio1"),
                                                document.getElementById("radio2"),
                                                document.getElementById("radio3"),
@@ -242,7 +263,9 @@
                                                document.getElementById("radio7"),
                                                document.getElementById("radio8"),
                                                document.getElementById("radio9"),
-                                               document.getElementById("radio10"));
+                                               document.getElementById("radio10"),
+                                               document.getElementById("radio11"),
+                                               document.getElementById("radio12"));
                         var myobj=eval(data);
                         if(myobj.length==0){
                             document.getElementById("PSchoose-title").innerHTML="无图片集！请先创建图片集";

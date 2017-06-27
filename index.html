@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
-    <title>志愿者端-我发布的图片</title>
+    <title>管理者端-我发布的图片</title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -36,8 +36,8 @@
 		        </div>  
             </div>
 
-            <ul class="nav navbar-top-links navbar-right">
-               
+            <ul class="nav navbar-top-links navbar-right" style="float:right;">
+                
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="color:#F30">
@@ -57,6 +57,11 @@
                 </li>
                 <!-- /.dropdown -->
             </ul>
+
+            <div method="get" id="searchdiv" style="float:right; margin-top:13px;">
+                <input style="float:left;width:70%;" class="form-control" type="text" name="s" id="s" placeholder="搜索">
+                <button style="float:left;margin-left:10px;" class="btn" title="搜索" type="button">搜索</button>
+            </div>
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
