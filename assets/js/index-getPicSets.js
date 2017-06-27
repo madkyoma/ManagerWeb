@@ -94,6 +94,7 @@ function getPicSets(){
                         if(myobj[i].PicSetId!=null&&myobj[i].PicSetId!="")
                           albumIDArr[i].innerHTML=myobj[i].PicSetId;
 						          }
+                      albumFinishArr[0].innerHTML="已完成标签化"
                     }
                   },
                   //error:function(XMLHttpRequest, textStatus, errorThrown){
