@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="" name="description" />
-    <title>管理员端-我发布的图片</title>
+    <title>管理员端-搜索结果</title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -60,7 +60,7 @@
 
             <div method="get" id="searchdiv" style="float:right; margin-top:13px;">
                 <input style="float:left;width:70%;" class="form-control" type="text" name="s" id="s" placeholder="搜索">
-                <button style="float:left;margin-left:10px;" class="btn" title="搜索" type="button" id="search">搜索</button>
+                <button style="float:left;margin-left:10px;" class="btn" title="搜索" type="button">搜索</button>
             </div>
         </nav>
         <!--/. NAV TOP  -->
@@ -69,7 +69,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> 我发布的图片</a>
+                        <a href="index.html"><i class="fa fa-dashboard"></i> 我发布的图片</a>
                     </li>
                     <li>
                         <a href="create-picSet.html"><i class="fa fa-edit"></i> 发布新的图片</a>
@@ -92,12 +92,9 @@
         <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header" id="album_name">
+                            搜索结果
                             <small>Welcome 管理员</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li><a href="index.html" id="newPicSet">返回图片集目录 </a></li>
-                    </ol> 
-                                    
+                        </h1>                                    
         </div>
             <div id="page-inner"> 
             <!-- 第一行ROW -->
@@ -252,11 +249,7 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#search').on('click',function(){
-                var keyword = $('#s').val();
-                window.location.href = "searchRes.html?keyword=" + keyword;
-            })
-            document.getElementById("album_name").innerHTML=getparam2()+"<small>Welcome 管理员</small>";
+            document.getElementById("album_name").innerHTML='"'+getparam1()+'"的搜索结果<small>Welcome 管理员</small>';
             showPics();
         });
         function getparam1(){
@@ -268,18 +261,9 @@
             var param1=tmp3;
             return param1;
         } 
-        function getparam2(){
-            var url=location.href;
-            url = decodeURI( url );
-            var tmp1=url.split("?")[1];
-            var tmp2=tmp1.split("&")[1];
-            var tmp3=tmp2.split("=")[1];
-            var param2=tmp3;
-            return param2;
-        } 
         function showPics(){
-        var params = "picSetId="+getparam1();  
-        var url = "http://114.115.142.42/Operation/GetPhotos";  
+        var params = "key_word="+getparam1();  
+        var url = "http://114.115.142.42/Operation/searchImg";  
             $.ajax({  
                 type: 'POST',  
                 url: url,  
@@ -299,23 +283,15 @@
                         var labelArr=document.getElementsByName("label");
                       
                         var myobj=eval('('+data+')');
-                        //window.alert(data);
+                        console.log(data);
                         for(var i=0;i<myobj.length;i++){
                             //显示图片div
                             divArr[i].style.display="block";
                             //更改图片地址
                             if(myobj[i].Url!=null&&myobj[i].Url!="")
-                                picArr[i].src=myobj[i].Url;
+                                picArr[i].src=myobj[i].url;
                             //更改标签
-                            if(myobj[i].desNum==3){
-                                labelArr[i].innerHTML=myobj[i].desContent1+"；"+myobj[i].desContent2+"；"+myobj[i].desContent3;
-                            }else if(myobj[i].desNum==2){
-                                labelArr[i].innerHTML=myobj[i].desContent1+"；"+myobj[i].desContent2;
-                            }else if(myobj[i].desNum==1){
-                                labelArr[i].innerHTML=myobj[i].desContent1
-                            }else if(myobj[i].desNum==0){
-                                labelArr[i].innerHTML="空";
-                            }
+                            labelArr[i].innerHTML=myobj[i].desOptionalTags;
                             
                         }
                     }
