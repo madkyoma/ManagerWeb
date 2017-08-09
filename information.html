@@ -63,7 +63,7 @@
 
             <div method="get" id="searchdiv" style="float:right; margin-top:13px;">
                 <input style="float:left;width:70%;" class="form-control" type="text" name="s" id="s" placeholder="搜索">
-                <button style="float:left;margin-left:10px;" class="btn" title="搜索" type="button">搜索</button>
+                <button style="float:left;margin-left:10px;" class="btn" title="搜索" type="button" id="search">搜索</button>
             </div>
         </nav>
         <!--/. NAV TOP  -->
@@ -159,6 +159,10 @@
     <script src="assets/js/index-getPicSets.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            $('#search').on('click',function(){
+                var keyword = $('#s').val();
+                window.location.href = "searchRes.html?keyword=" + keyword;
+            });
             init();
         });
         function init(){
