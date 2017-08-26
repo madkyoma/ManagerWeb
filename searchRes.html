@@ -295,7 +295,7 @@
                             if(myobj[i].url!=null&&myobj[i].url!="")
                                 picArr[i].src=myobj[i].url;
                             //更改标签
-                            labelArr[i].innerHTML=myobj[i].desOptionalTags;
+                            labelArr[i].innerHTML=myobj[i].desOptionalTags.substring(1,myobj[i].desOptionalTags.length-1);;
                             
                         }
                     }

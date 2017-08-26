@@ -311,7 +311,7 @@
                                 picArr[i].src=myobj[i].url;
                             //更改标签
                             if(myobj[i].desOptionalTags.length!=0){
-                                labelArr[i].innerHTML=myobj[i].desOptionalTags;
+                                labelArr[i].innerHTML=myobj[i].desOptionalTags.substring(1,myobj[i].desOptionalTags.length-1);
                             }else{
                                 labelArr[i].innerHTML="无";
                             }
