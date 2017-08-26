@@ -303,21 +303,14 @@
                         console.log(myobj);
                         //window.alert(data);
                         for(var i=0;i<myobj.length;i++){
+                            //
                             //显示图片div
                             divArr[i].style.display="block";
                             //更改图片地址
-                            if(myobj[i].Url!=null&&myobj[i].Url!="")
-                                picArr[i].src=myobj[i].Url;
+                            if(myobj[i].url!=null&&myobj[i].url!="")
+                                picArr[i].src=myobj[i].url;
                             //更改标签
-                            if(myobj[i].desNum==3){
-                                labelArr[i].innerHTML=myobj[i].desContent1+"；"+myobj[i].desContent2+"；"+myobj[i].desContent3;
-                            }else if(myobj[i].desNum==2){
-                                labelArr[i].innerHTML=myobj[i].desContent1+"；"+myobj[i].desContent2;
-                            }else if(myobj[i].desNum==1){
-                                labelArr[i].innerHTML=myobj[i].desContent1
-                            }else if(myobj[i].desNum==0){
-                                labelArr[i].innerHTML="空";
-                            }
+                            labelArr[i].innerHTML=myobj[i].desOptionalTags;
                             
                         }
                     }
