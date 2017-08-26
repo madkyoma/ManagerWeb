@@ -310,7 +310,12 @@
                             if(myobj[i].url!=null&&myobj[i].url!="")
                                 picArr[i].src=myobj[i].url;
                             //更改标签
-                            labelArr[i].innerHTML=myobj[i].desOptionalTags;
+                            if(myobj[i].desOptionalTags.length!=0){
+                                labelArr[i].innerHTML=myobj[i].desOptionalTags;
+                            }else{
+                                labelArr[i].innerHTML="无";
+                            }
+                            
                             
                         }
                     }
