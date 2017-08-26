@@ -293,12 +293,14 @@
                     if(data=="invalid!"){  
                         window.alert("未登录！非法操作！");
                     }else{
+                        console.log(data);
                         //获取页面中的元素
                         var divArr=document.getElementsByName("picDiv");
                         var picArr=document.getElementsByName("pic");
                         var labelArr=document.getElementsByName("label");
                       
                         var myobj=eval('('+data+')');
+                        console.log(myobj);
                         //window.alert(data);
                         for(var i=0;i<myobj.length;i++){
                             //显示图片div
