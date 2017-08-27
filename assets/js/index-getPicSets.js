@@ -32,7 +32,6 @@ function getPicSets(){
                             $board.append($panel);
                             var $number = $('<div></div>',{class: "number"});
                             $panel.append($number);
-                            console.log(myobj[i].isFinish);
                             if (myobj[i].isFinish == "1") {
                                 $number.append('<h3><h3 class="album_name" albumId="' + myobj[i].PicSetId + '">' + myobj[i].PicSetName + '</h3><small class="album_finish">已完成标签化</small></h3>');
                             }else{
