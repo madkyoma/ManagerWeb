@@ -32,13 +32,14 @@ function getPicSets(){
                             $board.append($panel);
                             var $number = $('<div></div>',{class: "number"});
                             $panel.append($number);
-                            if (myobj[i].isFinish == "1") {
-                                $number.append('<h3><h3 class="album_name" albumId="' + myobj[i].PicSetId + '">' + myobj[i].PicSetName + '</h3><small class="album_finish">已完成标签化</small></h3>');
-                            }else{
-                                $number.append('<h3><h3 class="album_name" albumId="' + myobj[i].PicSetId + '">' + myobj[i].PicSetName + '</h3><small class="album_finish">未完成标签化</small></h3>');
-                            };
+                            $number.append('<h3><h3 class="album_name" albumId="' + myobj[i].PicSetId + '">' + myobj[i].PicSetName + '</h3><small class="album_finish">共计标签'+myobj[i].tagsNum+'条</small></h3>');
+                            
                             $number.append('<div class="progress progress-striped">'+
-                                              '<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%"></div>'+
+                                              '<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="'+
+                                              myobj[i].finishRate.substring(0, myobj[i].finishRate.length-1)+
+                                              '" aria-valuemin="0" aria-valuemax="100" style="width: '+
+                                              myobj[i].finishRate+
+                                              '"></div>'+
                                           '</div> ');
                             var $cover = $('<div></div>',{class: "icon album_cover", 'albumId': myobj[i].PicSetId,  html:'<img id="album_cover2" height="100%" width="100%" src="'+myobj[i].Url+'">'});
                             $panel.append($cover);
