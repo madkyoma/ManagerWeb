@@ -282,6 +282,12 @@
             });
             document.getElementById("album_name").innerHTML=getparam2()+"<small>Welcome 管理员</small>";
             showPics();
+            $(".panel-warning").on('click',function(){
+                $('#chosedPic').attr('src',$(this).attr('url'));
+                $('#desTags').html('描述标签：' + $(this).attr('desOptionalTags'));
+                $('#req').html('管理员提问：' + $(this).attr('req'));
+                $('#reqTags').html('需求标签：' + $(this).attr('reqOptionalTags'));
+            });
         });
         function getparam1(){
             var url=location.href;
