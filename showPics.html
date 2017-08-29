@@ -353,11 +353,9 @@
 
                             //保存需求标签
                             if(myobj[i].reqOptionalTags.length!=0){
-                                labelArr[i].innerHTML=myobj[i].reqOptionalTags.substring(1,myobj[i].reqOptionalTags.length-1);
                                 //保存信息
                                 $(divArr[i]).children("div .panel-warning").attr('reqOptionalTags',myobj[i].reqOptionalTags.substring(1,myobj[i].reqOptionalTags.length-1));
                             }else{
-                                labelArr[i].innerHTML="无";
                                 //保存信息
                                 $(divArr[i]).children("div .panel-warning").attr('reqOptionalTags', "无");
                             }
