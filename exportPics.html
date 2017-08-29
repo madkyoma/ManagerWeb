@@ -90,8 +90,8 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
           <div class="header"> 
-                        <a href="http://114.115.142.42/result/DownLoad.txt" download="tags.txt" style="float:right;padding-top:42px;padding-right:100px;">
-                            <input class="btn btn-warning" type="button" name="export" value="导出标签化结果" onclick="download()">
+                        <a id="downloadButton" href="http://114.115.142.42/result/DownLoad.txt" download="tags.txt" style="float:right;padding-top:42px;padding-right:100px;">
+                            <input class="btn btn-warning" type="button" name="export" value="导出标签化结果">
                         </a>
                         <h1 class="page-header" id="album_name">
                             <small>Welcome 管理员</small>
@@ -288,6 +288,27 @@
                 $('#req').html('管理员提问：' + $(this).attr('req'));
                 $('#reqTags').html('需求标签：' + $(this).attr('reqOptionalTags'));
             });
+            var params = "picSetId="+getparam1();
+            var url = "http://114.115.142.42/Operation/ExportPhotos";  
+                $.ajax({  
+                  type: 'POST',  
+                  url: url,  
+                  dataType: 'text',  
+                  data: params,  
+                  beforeSend: function(){  
+                  },  
+                  complete: function(XMLHttpRequest, textStatus) { 
+                  },  
+                  success: function(data) { 
+                      console.log(data);
+                      $('#downloadButton').attr('href',data);
+                  },
+                  //error:function(XMLHttpRequest, textStatus, errorThrown){
+                  //通常情况下textStatus和errorThrown只有其中一个包含信息
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    window.alert(textStatus);
+                  }
+                }); 
         });
         function getparam1(){
             var url=location.href;
@@ -379,28 +400,6 @@
   
         }
 
-        function download(){
-            var params = "picSetId="+getparam1();
-            var url = "http://114.115.142.42/Operation/ExportPhotos";  
-                $.ajax({  
-                  type: 'POST',  
-                  url: url,  
-                  dataType: 'text',  
-                  data: params,  
-                  beforeSend: function(){  
-                  },  
-                  complete: function(XMLHttpRequest, textStatus) { 
-                  },  
-                  success: function(data) { 
-                      console.log(data);
-                  },
-                  //error:function(XMLHttpRequest, textStatus, errorThrown){
-                  //通常情况下textStatus和errorThrown只有其中一个包含信息
-                  error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    window.alert(textStatus);
-                  }
-                });  
-        }
 
     </script>
     
