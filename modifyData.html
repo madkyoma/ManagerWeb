@@ -5,17 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="" name="description" />
-    <title>管理者端-标签结果导出</title>
+    <title>管理者端-判定参数调节</title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
+
+    <link href="assets/css/select2.min.css" rel="stylesheet" >
+    <link href="assets/css/checkbox3.min.css" rel="stylesheet" >
     <!-- Custom Styles-->
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
-    
+    <script type="text/javascript">
+            
+    </script>
 </head>
 
 <body>
@@ -65,6 +70,7 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
+
                     <li>
                         <a href="index.html"><i class="fa fa-dashboard"></i> 我发布的图片</a>
                     </li>
@@ -72,15 +78,15 @@
                         <a href="create-picSet.html"><i class="fa fa-edit"></i> 发布新的图片</a>
                     </li> 
                     <li>
-                        <a class="active-menu" href="export.html"><i class="fa fa-table"></i> 标签结果导出</a>
+                        <a href="export.html"><i class="fa fa-table"></i> 标签结果导出</a>
                     </li>
                     <li>
                         <a href="information.html"><i class="fa fa-user"></i> 个人信息修改 </a>
                     </li>
                     <li>
-                        <a href="modifyData.html"><i class="fa fa-gear"></i> 判定参数调节</a>
+                        <a class="active-menu" href="modifyData.html"><i class="fa fa-gear"></i> 判定参数调节</a>
                     </li>
-                        
+
                 </ul>
 
             </div>
@@ -91,13 +97,45 @@
         <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
-                            标签结果导出 <small>Welcome 管理员</small>
+                            判定参数调节 <small>Welcome 管理员</small>
                         </h1>
                         
                                     
         </div>
             <div id="page-inner">
 
+                <div class="row">
+                    <div class="col-xs-12">
+                    <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:0px">
+                        <form name="createPSForm" method="POST" action=""> 
+                        <div style="padding-bottom:15px;padding-top:0px">
+                            <h4>置信度（当标签的置信度达到要求时，标签被采纳）:</h4>
+                                <select id="confidence" class="form-control">
+                                    <option value="1">10%</option>
+                                    <option value="2">20%</option>
+                                    <option value="3">30%</option>
+                                    <option value="4">40%</option>
+                                    <option value="5">50%</option>
+                                    <option value="6">60%</option>
+                                    <option value="7">70%</option>
+                                    <option value="8" selected="selected">80%</option>
+                                    <option value="9">90%</option>
+                                    <option value="10">100%</option>
+                                </select>
+                            <h4>标签数量（当图片被采纳的标签数量达到要求时，图片判定标注完成）:</h4>
+                                <input class="form-control" type="text" id="tagNum" size="30" placeholder="标签数量" style="width:100%;" /> 
+                             
+                        </div>
+                        
+                            <input class="btn btn-warning" type="button" name="submit" value="设置" onclick="modify()"> 
+                            <input class="btn btn-default" type="reset" name="reset" value="重置">
+                        </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+       
                 
                 <footer><p>Copyright &copy; 2017. No3b All rights reserved.<a target="_blank" href="#">联系我们</a></p>
                 
@@ -114,80 +152,42 @@
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script type="text/javascript">
-        function getPicSets(){
-    var params = " ";  
-    var url = "http://114.115.142.42/Operation/GetPicSet";  
-    $.ajax({  
-            type: 'POST',  
-            url: url,  
-            dataType: 'text',  
-            data: params,  
-            beforeSend: function(){  
-            },  
-            complete: function(XMLHttpRequest, textStatus) { 
-            },  
-            success: function(data) { 
-                if(data=="invalid!"){  
-                    window.alert("未登录！非法操作！");
-                }else{
-                    //获取图片集成功
-                    var myobj = eval(data);
-                    console.log(myobj);
-                    var $inner = $('#page-inner');
-                    var i = 0;
-                    for (var j = 0; j < (myobj.length / 4); j++) {
-                        var $row = $('<div></div>',{class: "row", id: "row" + j});
-                        $inner.append($row);
-                        for (var k = 0; k < 4; k++) {
-                            if(i >= myobj.length) break;
-                            var $col = $('<div></div>',{class: "col-md-3 col-sm-12 col-xs-12 album"});
-                            $row.append($col);
-                            var $board = $('<div></div>',{class: "board", 'albumid': myobj[i].PicSetId, 'albumName': myobj[i].PicSetName, id: "album"+i, style: "cursor: pointer"});
-                            $col.append($board);
-                            var $panel = $('<div></div>',{class: "panel panel-primary"});
-                            $board.append($panel);
-                            var $number = $('<div></div>',{class: "number"});
-                            $panel.append($number);
-                            $number.append('<h3><h3 class="album_name" albumId="' + myobj[i].PicSetId + '">' + myobj[i].PicSetName + '</h3><small class="album_finish">共计标签'+myobj[i].tagsNum+'条</small></h3>');
-                            
-                            $number.append('<div class="progress progress-striped">'+
-                                              '<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="'+
-                                              myobj[i].finishRate.substring(0, myobj[i].finishRate.length-1)+
-                                              '" aria-valuemin="0" aria-valuemax="100" style="width: '+
-                                              myobj[i].finishRate+
-                                              '"></div>'+
-                                          '</div> ');
-                            var $cover = $('<div></div>',{class: "icon album_cover", 'albumId': myobj[i].PicSetId,  html:'<img id="album_cover2" height="100%" width="100%" src="'+myobj[i].Url+'">'});
-                            $panel.append($cover);
-                            $board.on('click',function(){
-                                window.location.href = "exportPics.html"+"?"+"picSetId="+$(this).attr('albumId')+"&picSetName="+$(this).attr('albumName');
-                            });
-                            i++;
-                        };
-                    }
-                    
-                    
-
-                }
-            },
-            //error:function(XMLHttpRequest, textStatus, errorThrown){
-            //通常情况下textStatus和errorThrown只有其中一个包含信息
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                window.alert(textStatus);
-            }
-    });  
-
-}
-
-
         $(document).ready(function() {
             $('#search').on('click',function(){
                 var keyword = $('#s').val();
                 window.location.href = "searchRes.html?keyword=" + keyword;
             });
-            getPicSets();
         });
+        
 
+        function modify(){
+            var op = $("#confidence option:selected");
+            var tagNum = $('#tagNum');
+            var params="tagNum="+tagNum.val()+"&confidence="+op.val();
+            
+            var url = "http://114.115.142.42/Operation/JudgeSet";  
+                $.ajax({  
+                    type: 'POST',  
+                    url: url,  
+                    dataType: 'text',  
+                    data: params,  
+                    beforeSend: function(){},  
+                    complete: function(XMLHttpRequest, textStatus) {},  
+                    success: function(data) { 
+                        if(data=="set success"){
+                            window.alert("设置成功！");
+                            window.location.reload(flase);
+                        }else{
+                            window.alert(data);
+                        }
+                    },
+                    //error:function(XMLHttpRequest, textStatus, errorThrown){
+                    //通常情况下textStatus和errorThrown只有其中一个包含信息
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        window.alert(textStatus);
+                    }
+                });  
+        }
     </script>
     <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>
